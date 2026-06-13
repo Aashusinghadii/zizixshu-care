@@ -22,7 +22,7 @@ CORS(app)
 
 # ─── GROQ CLIENT ──────────────────────────────────────────────────────────────
 try:
-    client = Groq(api_key="REMOVED_KEY")
+    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     print("✅ Groq API: Connected")
 except Exception as e:
     print(f"⚠️ Groq API Key Error: {e}")
