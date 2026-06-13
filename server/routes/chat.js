@@ -12,7 +12,7 @@ router.post("/message", auth, async (req, res) => {
 
   try {
     // Call Python Groq ML service with full history for context
-    const mlResponse = await axios.post("http://localhost:5001/chat", {
+    const mlResponse = await axios.post(process.env.ML_SERVICE_URL + "/chat", {
       message,
       history: history || []
     });
