@@ -72,7 +72,7 @@ const Login = ({ onLogin, onGoRegister }) => {
   const handleSubmit = async () => {
     setError(""); setLoading(true);
     try {
-      const res = await fetch("http://https://zizixshu-care-server.onrender.com/api/auth/login", {
+      const res = await fetch("https://zizixshu-care-server.onrender.com/api/auth/login", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
       });
@@ -144,7 +144,7 @@ const Register = ({ onGoLogin }) => {
   const handleSubmit = async () => {
     setError(""); setSuccess(""); setLoading(true);
     try {
-      const res = await fetch("http://https://zizixshu-care-server.onrender.com/api/auth/register", {
+      const res = await fetch("https://zizixshu-care-server.onrender.com/api/auth/register", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
       });
@@ -305,7 +305,7 @@ const Chat = ({ user, onLogout }) => {
     setLoading(true);
     try {
       const history = messages.slice(-10).map(m => ({ role: m.role === "bot" ? "assistant" : "user", text: m.text }));
-      const res = await fetch("http://https://zizixshu-care-server.onrender.com/api/chat/message", {
+      const res = await fetch("https://zizixshu-care-server.onrender.com/api/chat/message", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ message: msg, history })
@@ -319,7 +319,7 @@ const Chat = ({ user, onLogout }) => {
   };
 
   const clearChat = async () => {
-    try { await fetch("http://https://zizixshu-care-server.onrender.com/api/chat/history", { method: "DELETE", headers: { Authorization: `Bearer ${token}` } }); } catch {}
+    try { await fetch("https://zizixshu-care-server.onrender.com/api/chat/history", { method: "DELETE", headers: { Authorization: `Bearer ${token}` } }); } catch {}
     setMessages([{ role: "bot", text: "Chat clear ho gayi! 🧹 Nayi shuruat karte hain!", time: Date.now(), predictions: null }]);
   };
 
